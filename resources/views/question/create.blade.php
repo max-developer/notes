@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', __('Questions: Create'))
+
 @section('content')
     <h1 class="mb-5">{{ __('Create') }}</h1>
 

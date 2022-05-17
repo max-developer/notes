@@ -1,39 +1,43 @@
 @extends('layouts.app')
 
-@section('title', __('Categories: List'))
+@section('title', __('Links: List'))
 
 @section('content')
-    <h1 class="mb-3">{{ __('Category') }}</h1>
+    <h1 class="mb-3">{{ __('Link') }}</h1>
 
-    <x-button.link route="categories.create" :label="__('Add')"/>
+    <x-button.link route="links.create" :label="__('Add')"/>
 
     <table class="table mt-2">
         <thead>
         <tr>
-            <th class="col-1">ID</th>
             <th>{{ __('Name') }}</th>
             <th class="col-2">{{ __('Actions') }}</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($categories as $category)
+        @foreach($links as $link)
             <tr>
-                <td>{{$category->id}}</td>
-                <td>{{$category->name}}</td>
+                <td>
+                    <a href="{{$link->url}}" target="_blank">
+                        {{$link->name ?: $link->url}}
+                    </a>
+                </td>
                 <td>
                     <x-button.link
                         variant="danger"
-                        route="categories.destroy"
-                        :params="$category"
+                        route="links.destroy"
+                        :params="$link"
                         :label="__('Delete')"
                         data-confirm="Are you sure?"
                         data-method="DELETE"
                     />
-                    <x-button.link route="categories.edit" :params="$category" :label="__('Edit')"/>
+                    <x-button.link route="links.edit" :params="$link" :label="__('Edit')" append/>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+
+    <x-pagination :items="$links->withQueryString()" />
 
 @endsection

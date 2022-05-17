@@ -20,8 +20,10 @@ class NoteController extends Controller
 
     public function index(Request $request)
     {
-        $notes = $this->noteService->search($request->query->all());
-        return view('note.index', compact('notes'));
+        $filter = $request->query->all();
+        $notes = $this->noteService->search($filter);
+
+        return view('note.index', compact('notes', 'filter'));
     }
 
     public function create(Request $request)

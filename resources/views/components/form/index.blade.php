@@ -1,4 +1,5 @@
 @props([
+    'csrf' => true,
     'method' => 'GET'
 ])
 @php
@@ -8,7 +9,10 @@
     @if($isMethodHidden)
         @method($method)
     @endif
-    @csrf
+
+    @if($csrf && strtoupper($method) != 'GET')
+        @csrf
+    @endif
 
     {{$slot}}
 </form>

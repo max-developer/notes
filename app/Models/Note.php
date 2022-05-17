@@ -23,4 +23,8 @@ class Note extends Model
         return $this->belongsToMany(Question::class, 'note_questions');
     }
 
+    public function links(): BelongsToMany
+    {
+        return $this->belongsToMany(Link::class, 'note_links');
+    }
 }

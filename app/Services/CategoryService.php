@@ -7,7 +7,7 @@ use App\Models\Category;
 class CategoryService
 {
     /** @return Category[] */
-    public function search(array $filter = [])
+    public function search(array $filter = []): iterable
     {
         $query = Category::query();
         return $query->get();

@@ -18,10 +18,12 @@ class QuestionController extends Controller
         $this->questionService = $questionService;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $questions = $this->questionService->search();
-        return view('question.index', compact('questions'));
+        $filter = $request->query();
+        $questions = $this->questionService->search($filter);
+
+        return view('question.index', compact('questions', 'filter'));
     }
 
     public function create()

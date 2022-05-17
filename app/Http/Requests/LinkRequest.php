@@ -4,13 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class QuestionRequest extends FormRequest
+class LinkRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
             'name' => 'required',
-            'content' => 'sometimes',
+            'url' => 'required',
         ];
     }
 }

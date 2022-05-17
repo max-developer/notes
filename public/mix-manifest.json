@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/simplemde.js": "/js/simplemde.js",
+    "/js/highlight.js": "/js/highlight.js",
     "/css/app.css": "/css/app.css",
     "/css/sidebar.css": "/css/sidebar.css"
 }

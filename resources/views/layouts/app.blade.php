@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="csrf-param" content="_token" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -35,17 +35,22 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories.index') }}">Категории</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('notes.index') }}">Заметки</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('questions.index') }}">Вопросы</a>
-                        </li>
-                    </ul>
+                    @auth
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('categories.index') }}">Категории</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('notes.index') }}">Заметки</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('questions.index') }}">Вопросы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('links.index') }}">Ссылки</a>
+                            </li>
+                        </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

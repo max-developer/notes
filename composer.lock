@@ -5811,7 +5811,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/max-developer/laravel-generator",
-                "reference": "d6a402fe28c956e33f82bdfb6201b085ff8ee675"
+                "reference": "23c50e9d018f165ab3ca8a0a8649ee475b4d87d4"
             },
             "require": {
                 "illuminate/console": "^8.0",
@@ -5858,7 +5858,7 @@
                 }
             ],
             "description": "Laravel crud generator",
-            "time": "2022-05-09T12:21:38+00:00"
+            "time": "2022-05-10T08:42:35+00:00"
         },
         {
             "name": "myclabs/deep-copy",

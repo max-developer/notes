@@ -5,4 +5,3 @@ ujs.start();
 
 import Alpine from 'alpinejs';
 Alpine.start();
-

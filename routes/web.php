@@ -25,8 +25,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
     Route::resource('questions', \App\Http\Controllers\QuestionController::class);
     Route::resource('notes', \App\Http\Controllers\NoteController::class);
+    Route::resource('links', \App\Http\Controllers\LinkController::class);
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/api/questions', [\App\Http\Controllers\Api\QuestionController::class, 'index']);
+    Route::get('/api/links', [\App\Http\Controllers\Api\LinkController::class, 'index']);
 });

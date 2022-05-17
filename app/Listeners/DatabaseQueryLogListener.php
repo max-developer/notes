@@ -17,7 +17,8 @@ class DatabaseQueryLogListener
     public function handle(QueryExecuted $event)
     {
         $sql = str_replace("?", "'%s'", $event->sql);
-        $log = vsprintf($sql, $event->bindings);
+        $sql = vsprintf($sql, $event->bindings);
+        $log = sprintf('SQL: %s; Time: %s;', $sql, $event->time);
 
         $this->logManager
             ->build([
