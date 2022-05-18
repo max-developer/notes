@@ -22,7 +22,7 @@
 
     @stack('scripts')
 </head>
-<body>
+<body class="fs-5">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

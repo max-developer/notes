@@ -1,3 +1,8 @@
+up:
+	docker-compose up -d
+
+down: dump
+	docker-compose down
 
 console:
 	docker-compose exec -u $$(id -u) laravel.test bash
